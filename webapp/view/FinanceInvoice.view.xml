@@ -1,0 +1,197 @@
+<mvc:View
+    controllerName="zinvoice.controller.FinanceInvoice"
+    xmlns:table="sap.ui.table"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:core="sap.ui.core"
+  >
+    <App id="second">
+        <pages>
+            <Page title="E-Invoice">
+                <content>
+                    <table:Table id="table1" rows="{oTableItemModel>/aTableItem}" selectionMode="MultiToggle" ariaLabelledBy="title">
+
+                        <table:columns>
+                            <table:Column width="11rem">
+                                <Label text="Acknowledgement" />
+                                <table:template>
+                                    <Text text="{oTableItemModel>AckNo}" wrapping="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Acknowledgement Date" />
+                                <table:template>
+                                    <Text text="{oTableItemModel>AckDate}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="IRN Status" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>IrnStatus}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="IRN Number" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>Irn}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Eway Bill Num" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>Ebillno}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Eway Bill Date" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>EgenDat}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Eway Bill Status" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>Status}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Accounting Number" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>AccountingDocument}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Accounting Document Item" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>AccountingDocumentItem}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Accounting Document Type" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>AccountingDocumentType}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Bill to Party" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>Customer}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Bill to Name" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>CustomerName}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Taxable Value" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>BASEAMT}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Bill-to GST" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>GST}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="CGST" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>CGST}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="SGST" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>SGST}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="IGST" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>IGST}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                             <table:Column width="11rem">
+                                <Label text="Gross Amount" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>GrossAmount}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Total Invoice Amount" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>TOTAL_AMT}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Hsncode" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>HSNCODE}" editable="false" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Vehicle Number" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>VEHICLENUMBER}" editable="{oGenericModel>/setEditable}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Transport Document Number" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>TransDocNo}" editable="{oGenericModel>/setEditable}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Transport Name" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>TRANSPORTERNAME}" editable="{oGenericModel>/setEditable}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Transport ID" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>TRANSID}" editable="{oGenericModel>/setEditable}" />
+                                </table:template>
+                            </table:Column>
+                            <table:Column width="11rem">
+                                <Label text="Distance" />
+                                <table:template>
+                                    <Input value="{oTableItemModel>Distance}" editable="{oGenericModel>/setEditable}" />
+                                </table:template>
+                            </table:Column>
+                        </table:columns>
+                    </table:Table>
+
+                    <!-- <VBox visible="{=${oCommonModel>/displayObject/Action} === 'Generate'}">
+                        <core:Fragment fragmentName="zinvoice.fragments.Generate" type="XML" />
+                    </VBox> -->
+
+                    <!-- <VBox visible="{=${oCommonModel>/displayObject/Action} === 'Display'}">
+                        <core:Fragment fragmentName="zinvoice.fragments.Display" type="XML" />
+                    </VBox>
+
+                    <VBox visible="{=${oCommonModel>/displayObject/Action} === 'Cancel'}">
+                        <core:Fragment fragmentName="zinvoice.fragments.Cancel" type="XML" />
+                    </VBox> -->
+                </content>
+                <footer>
+                    <Bar>
+                        <!-- <contentLeft>
+                            <Button text="Generate IRN" press="generateIRN" visible="{oGenericModel>/buttonVisible}"/>
+                        </contentLeft> -->
+                        <contentLeft>
+                            <Button text="Generate Eway-Bill and IRN" press="generateEwayBillIrn" visible="{oGenericModel>/buttonVisible}"/>
+                        </contentLeft>
+                    </Bar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

@@ -1,0 +1,233 @@
+{
+    "_version": "1.48.0",
+    "sap.app": {
+        "id": "zinvoice",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.9.5",
+            "toolsId": "a6df920a-ff29-4955-9782-d410e50bb0cd"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/YINVOICE/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "zinvoice-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "zirn",
+                    "action": "display",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": ""
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.108.14",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "zinvoice.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "zinvoice.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteInvoice",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetInvoice"
+                    ]
+                },
+                {
+                    "name": "InvoiceDetails",
+                    "pattern": "InvoiceDetails",
+                    "target": [
+                        "InvoiceDetails"
+                    ]
+                },{
+                    "name": "Cancel",
+                    "pattern": "Cancel",
+                    "target": [
+                        "Cancel"
+                    ]
+                }, {
+                    "name": "json",
+                    "pattern": "json",
+                    "target": [
+                        "json"
+                    ]
+                },
+                {
+                    "name": "Print",
+                    "pattern": "Print",
+                    "target": [
+                        "Print"
+                    ]
+                },
+                {
+                    "name": "Invoice",
+                    "pattern": "Invoice",
+                    "target": [
+                        "Invoice"
+                    ]
+                },
+                {
+                    "name": "FinanceInvoice",
+                    "pattern": "FinanceInvoice",
+                    "target": [
+                        "FinanceInvoice"
+                    ]
+                },
+                {
+                    "name": "Financecancel",
+                    "pattern": "Financecancel",
+                    "target": [
+                        "Financecancel"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetInvoice": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Invoice",
+                    "viewName": "Invoice"
+                },
+                "InvoiceDetails": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "InvoiceDetails",
+                    "viewName": "InvoiceDetails"
+                },
+                "Cancel": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Cancel",
+                    "viewName": "Cancel"
+                },
+                "json": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "json",
+                    "viewName": "json"
+                },
+                "Print": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Print",
+                    "viewName": "Print"
+                },
+                "Invoice": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Invoice",
+                    "viewName": "Invoice"
+                },
+                "FinanceInvoice": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "FinanceInvoice",
+                    "viewName": "FinanceInvoice"
+                },
+                "Financecancel": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Financecancel",
+                    "viewName": "Financecancel"
+                }
+            }
+            
+        },
+        "rootView": {
+            "viewName": "zinvoice.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

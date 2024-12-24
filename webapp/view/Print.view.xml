@@ -1,0 +1,14 @@
+<mvc:View controllerName="zinvoice.controller.Print" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}" showNavButton="false">
+        <content>
+
+        </content>
+        <footer>
+            <Bar id="a1">
+                <contentRight>
+                    <Button id="a2" press="onNav" text="Home" />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

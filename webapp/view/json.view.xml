@@ -1,0 +1,26 @@
+<mvc:View controllerName="zinvoice.controller.json" xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+ xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" 
+  xmlns:smartTable="sap.ui.comp.smarttable" 
+	 xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified">
+    <App id="json">
+     <pages>
+     <Page id="a1" >
+            <f:SimpleForm id="a2" title="Json View" editable="true" 
+                 labelMinWidth = "192"  layout="ResponsiveGridLayout" class="sapUiTinyMarginBottom">
+                <f:content>
+                    <TextArea value="{oCommonModel>/json}" id="idText" height="100%" width="100%"  rows="20" />
+                </f:content>
+            </f:SimpleForm>  
+        <footer>
+            <Bar id="a3">
+               <contentRight>
+				    <!-- <Button text="Save" press="onsave"></Button> -->
+               </contentRight>
+            </Bar>
+        </footer>
+        </Page>
+        </pages>
+    </App>
+</mvc:View>

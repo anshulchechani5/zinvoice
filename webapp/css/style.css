@@ -1,0 +1,39 @@
+/* Enter your custom styles here */
+.Set_Pading {
+    padding-right: 70px;
+}
+.myBackgroundStyle {
+    padding-bottom: 120px ;
+    background-repeat:no-repeat;
+    background-position:bottom;
+    border-image-width: inherit;
+    
+     /* opacity: 0.4;  */
+    /* background: rgba(76, 175, 80, 0.3); */
+    animation: change 3600s infinite;
+    font-size: large;
+}
+div[id*='form1'] div h5 {   
+    display: none !important;
+}
+@keyframes change {
+    0% {
+        background-image: url('ewayandinvoice.png');
+    }
+
+    60% {
+        background-image: url('ewayandinvoice.png');    
+    }
+
+    100% {
+        background-image: url('ewayandinvoice.png');
+    }
+
+    
+}
+.FontColorChange {
+    color: rgb(0, 0, 0);
+    opacity: 10;
+    font: bolder;
+    color: black;
+}
